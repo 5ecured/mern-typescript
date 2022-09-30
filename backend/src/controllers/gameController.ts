@@ -13,7 +13,7 @@ export const getAllGames = async (req: Request, res: Response) => {
 
 export const createGame = async (req: Request, res: Response) => {
     const gameToCreate = await Game.create(req.body)
-
+    
     try {
         return res.status(201).json(gameToCreate)
     } catch (error) {
