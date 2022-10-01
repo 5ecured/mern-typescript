@@ -6,6 +6,7 @@ import gameRoute from './routes/gameRoute'
 const app: Application = express()
 
 app.use(express.json())
+app.use(cors())
 
 app.use('/api/games', gameRoute)
 
