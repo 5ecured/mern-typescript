@@ -16,6 +16,7 @@ const initialState: GameState = {
     errors: null
 }
 
+
 export const getGames = createAsyncThunk<Game[]>(
     'games/getGames', //Usually <the name of the slice>/<the name of this function>
     async (_, thunkAPI) => {
@@ -28,7 +29,8 @@ export const getGames = createAsyncThunk<Game[]>(
     }
 )
 
-//Below, Object means we are PASSING that type of data, Game means we are GETTING that type of data
+//Below, Object means we are PASSING that type of data, Game means we are GETTING that type of data. 
+//But honestly it may not even be necessary. Official RTK docs doesnt even use it, just use plain createAsyncThunk()
 export const createGame = createAsyncThunk<Object, Game>(
     'games/createGame',
     async (data, thunkAPI) => {
